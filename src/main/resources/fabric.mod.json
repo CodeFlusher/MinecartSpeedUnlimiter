@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "msunlimiter",
+  "version": "${version}",
+  "name": "MinecartSpeedUnlimiter",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/msunlimiter/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.codeflsuher.msunlimiter.MinecartSpeedUnlimiter"
+    ]
+  },
+  "mixins": [
+    "msunlimiter.mixins.json",
+    {
+      "config": "msunlimiter.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}"
+  }
+}
