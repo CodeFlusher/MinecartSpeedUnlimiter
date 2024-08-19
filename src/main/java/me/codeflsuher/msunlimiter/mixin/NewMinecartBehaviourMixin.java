@@ -23,7 +23,7 @@ public abstract class NewMinecartBehaviourMixin extends MinecartBehavior {
 
     @Inject(method = "getSlowdownFactor", at = @At("HEAD"), cancellable = true)
     private void slowdownFactror(CallbackInfoReturnable<Double> ci){
-        if(level().getGameRules().getInt(GameRules.RULE_MINECART_MAX_SPEED) >= 1000){
+        if(level().getGameRules().getInt(GameRules.RULE_MINECART_MAX_SPEED) >= 1000 && minecart.isVehicle()){
             ci.setReturnValue(1.0);
             ci.cancel();
         }
@@ -32,7 +32,8 @@ public abstract class NewMinecartBehaviourMixin extends MinecartBehavior {
 
     @Inject(method = "getMaxSpeed", at=@At("HEAD"), cancellable = true)
     private void overrideMaxSpeed(CallbackInfoReturnable<Double> ci){
-        if(level().getGameRules().getInt(GameRules.RULE_MINECART_MAX_SPEED) >= 1000){
+        var gameRuleKey = GameRules.RULE_MINECART_MAX_SPEED;
+        if(level().getGameRules().getInt(gameRuleKey) >= 1000){
             ci.setReturnValue(Double.MAX_VALUE / (this.minecart.isInWater() ? 0.5 : 1.0) / 20.0);
             ci.cancel();
         }
