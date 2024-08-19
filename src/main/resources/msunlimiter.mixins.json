@@ -4,8 +4,10 @@
   "package": "me.codeflsuher.msunlimiter.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MinecartMixin",
-    "NewMinecartBehaviourMixin"
+    "ThrownPotionMixin",
+    "TntMinecartMixin",
+    "NewMinecartBehaviourMixin",
+    "GamerulesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

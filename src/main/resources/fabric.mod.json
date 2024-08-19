@@ -10,6 +10,9 @@
   "icon": "assets/msunlimiter/icon.png",
   "environment": "*",
   "entrypoints": {
+    "server": [
+      "me.codeflsuher.msunlimiter.MinecartSpeedUnlimiterServer"
+    ],
     "main": [
       "me.codeflsuher.msunlimiter.MinecartSpeedUnlimiter"
     ]

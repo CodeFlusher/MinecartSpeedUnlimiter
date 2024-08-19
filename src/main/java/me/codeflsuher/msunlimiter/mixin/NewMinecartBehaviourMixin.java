@@ -23,7 +23,7 @@ public abstract class NewMinecartBehaviourMixin extends MinecartBehavior {
 
     @Inject(method = "getSlowdownFactor", at = @At("HEAD"), cancellable = true)
     private void slowdownFactror(CallbackInfoReturnable<Double> ci){
-        if(level().getGameRules().getInt(GameRules.RULE_MINECART_MAX_SPEED) >= 1000 && minecart.isVehicle()){
+        if(level().getGameRules().getInt(GameRules.RULE_MINECART_MAX_SPEED) >= 1000){
             ci.setReturnValue(1.0);
             ci.cancel();
         }
