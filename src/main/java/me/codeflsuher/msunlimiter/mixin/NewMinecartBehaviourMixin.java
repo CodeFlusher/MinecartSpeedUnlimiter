@@ -2,7 +2,6 @@ package me.codeflsuher.msunlimiter.mixin;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
-import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.entity.vehicle.MinecartBehavior;
 import net.minecraft.world.entity.vehicle.NewMinecartBehavior;
 import net.minecraft.world.level.GameRules;
@@ -23,7 +22,7 @@ public abstract class NewMinecartBehaviourMixin extends MinecartBehavior {
 
     @Inject(method = "getSlowdownFactor", at = @At("HEAD"), cancellable = true)
     private void slowdownFactror(CallbackInfoReturnable<Double> ci){
-        if(level().getGameRules().getInt(GameRules.RULE_MINECART_MAX_SPEED) >= 1000){
+        if(level().getGameRules().getInt(GameRules.RULE_MINECART_MAX_SPEED) >= 1000 && minecart.isOnRails()) {
             ci.setReturnValue(1.0);
             ci.cancel();
         }

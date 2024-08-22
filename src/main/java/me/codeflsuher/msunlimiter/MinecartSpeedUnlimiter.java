@@ -1,6 +1,7 @@
 package me.codeflsuher.msunlimiter;
 
 import com.mojang.logging.LogUtils;
+import me.codeflsuher.msunlimiter.gamerules.ModGamerules;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.vehicle.MinecartTNT;

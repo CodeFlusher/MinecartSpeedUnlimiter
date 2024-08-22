@@ -1,6 +1,5 @@
 package me.codeflsuher.msunlimiter.gamerules;
 
-import me.codeflsuher.msunlimiter.mixin.GamerulesMixin;
 import net.minecraft.world.level.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,4 +21,5 @@ public class ModGamerules {
             log.error("Failed to reflect fields",e);
         }
     }
+
 }
